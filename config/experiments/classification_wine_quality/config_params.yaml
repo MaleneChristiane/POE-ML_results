@@ -1,0 +1,25 @@
+classification:
+  name: Classification on Red Wine Quality data
+  description: Experiment for classifying the Quality of red wine
+  lags: 0
+  steps: 0
+  params:
+    max_depth: [6, 8, 10, 15, 20]
+    criterion: [friedman_mse, squared_error, gini]
+    random_state: [42]
+    min_samples_split: [5, 10, 50, 150]
+    min_samples_leaf: [10, 25, 50, 100]
+    scaler: [None, StandardScaler, MinMaxScaler, RobustScaler]
+  models:
+    - DecisionTreeClassifier
+    - RandomForestClassifier
+    - GradientBoostingClassifier
+  custom_models: False
+  search_methods: [grid, random]
+  search_scoring: accuracy
+  cv_setting: 
+    kind: StratifiedKFold
+    splits: 5
+  test_size: 0.2
+  shuffle: true
+  prediction_types: [one_step]

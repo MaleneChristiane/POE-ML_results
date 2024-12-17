@@ -1,0 +1,47 @@
+MLP_estate:
+  name: MLP regressor on real estate dataset
+  description: Experiment with MLP regressor on real estate dataset
+  lags: 0
+  steps: 0
+  params:
+    hidden_layer_sizes: [[100,], [100, 100], [100, 300, 100]]
+    activation: [relu, tanh, logistic]
+    solver: [adam]
+    alpha: [0.0001, 0.001, 0.01]
+    max_iter: [5000, 10000]
+    scaler: [None, StandardScaler, MinMaxScaler, RobustScaler, PowerTransformer]
+  models:
+    - MLP
+  custom_models: False
+  search_methods: [grid, random]
+  search_scoring: r2
+  cv_setting: 
+    kind: TimeSeriesSplit
+    splits: 5
+  test_size: 0.2
+  shuffle: false
+  prediction_types: [one_step]
+
+
+NN_estate:
+  name: Neural networks on real estate dataset
+  description: Experiment with neural networks on real estate dataset
+  lags: 0
+  steps: 0
+  params:
+    optimizer: ['adam', 'sgd']
+    epochs: [100, 200]
+    batch_size: [32, 64]
+    scaler: [None, StandardScaler, MinMaxScaler, RobustScaler, PowerTransformer]
+  models:
+    - SimpleNN
+    - DeepNN
+  custom_models: True
+  search_methods: [grid, random]
+  search_scoring: neg_mean_absolute_error  
+  cv_setting: 
+    kind: TimeSeriesSplit
+    splits: 5
+  test_size: 0.2
+  shuffle: false
+  prediction_types: [one_step]

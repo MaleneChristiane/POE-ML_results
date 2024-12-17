@@ -1,0 +1,145 @@
+# Dataset description file
+
+tetouan_city_zone1:
+  path: 'data/regression/power_consumption/tetouan_city.csv'
+  name: "Power consumption of Tetouan City between 2017-01-01 and 2017-12-31 in 10 minutes resolution."
+  description: "Power consumption of Tetouan City between 2017-01-01 and 2017-12-31 in 10 minutes resolution. Has the weather data for temperature, humidity, wind speed and diffuse flows, as well as the consumption data for 3 different zones in the city. For simplicity, we will only use one of the zones."
+  type: "Multivariate regression for time series"
+  source: "https://archive.ics.uci.edu/dataset/849/power+consumption+of+tetouan+city"
+
+  target_column: "Zone 1 Power Consumption"
+  target_label: "Power Consumption"
+
+  sep : ","
+
+  index_column:
+    index: True
+    name: "DateTime"
+    parse_dates: True
+
+  features: True
+  feature_columns:
+    - Temperature
+    - Humidity
+    - Wind Speed
+    - general diffuse flows
+    - diffuse flows
+  
+  add_temporal: True
+  temporal_columns:
+    - 'hour_sin'
+    - 'hour_cos'
+    - 'weekday_sin'
+    - 'weekday_cos'
+    - 'month_sin'
+    - 'month_cos'
+
+  data_resolution: '10 minutes'
+  start_time: '1/1/2017 0:00'
+  end_time: '12/30/2017 23:50'
+
+
+real_estate:
+  path: "data/regression/real_estate/real_estate.csv"
+  name: "Real Estate valuation from Sindian Dist., New Taipei City, Taiwan"
+  description: "Real estate valuation of houses in Taiwan, the price denotes the cost of unit area."
+  type: "Multivariate regression"
+  source: "https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set"
+
+  target_column: "Y house price of unit area"
+  target_label: "House Price of Unit Area"
+
+  sep : ","
+
+  index_column: 
+    index: True
+    name: "No"
+    parse_dates: False
+
+  features: True
+  feature_columns:
+    - X1 transaction date
+    - X2 house age
+    - X3 distance to the nearest MRT station
+    - X4 number of convenience stores
+    - X5 latitude
+    - X6 longitude
+
+  add_temporal: False
+  temporal_columns:
+    - "X1 transaction date"
+
+
+traffic_volume:
+  path: 'data/regression/traffic_volume/metro_interstate_encoded.csv'
+  name: "Metro Interstate Traffic Volume with hourly features and holiday markings."
+  description: "Metro Interstate Traffic Volume with hourly features and holiday markings."
+  type: "Multivariate regression for time series"
+  source: "https://archive.ics.uci.edu/dataset/492/metro+interstate+traffic+volume"
+
+  target_column: "traffic_volume"
+  target_label: "Traffic Volume"
+
+  sep : ","
+
+  index_column:
+    index: True
+    name: "date_time"
+    parse_dates: True
+
+  features: True
+  feature_columns:
+    - holiday
+    - temp
+    - rain_1h
+    - snow_1h
+    - clouds_all
+    - weather_main_encoded
+    - weather_description_encoded
+  
+  add_temporal: True
+  temporal_columns:
+    - 'hour_sin'
+    - 'hour_cos'
+    - 'weekday_sin'
+    - 'weekday_cos'
+    - 'month_sin'
+    - 'month_cos'
+
+  data_resolution: 'hour'
+  start_time: '2012-10-02 09:00:00'
+  end_time: '2018-09-30 23:00:00'
+
+
+wine_quality:
+  path: 'data/classification/wine_quality/winequality-red.csv'
+  name: "Wine Quality Dataset"
+  description: "Wine Quality Dataset for red wine"
+  type: "Classification"
+  source: "https://archive.ics.uci.edu/dataset/186/wine+quality"
+
+  target_column: "quality"
+  target_label: "Wine Quality"
+
+  sep : ";"
+
+  index_column:
+    index: False
+    parse_dates: False
+  
+  features: True
+  feature_columns:
+    - fixed acidity
+    - volatile acidity
+    - citric acid
+    - residual sugar
+    - chlorides
+    - free sulfur dioxide
+    - total sulfur dioxide
+    - density
+    - pH
+    - sulphates
+    - alcohol
+  
+  add_temporal: False
+  temporal_columns: []

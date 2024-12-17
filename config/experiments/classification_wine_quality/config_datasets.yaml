@@ -1,0 +1,8 @@
+
+wine_quality:
+  - name: Full_dataset
+    dataset_type: multivariate
+    prediction_type: one_step
+    components:
+      - one_step_target
+      - feature_columns

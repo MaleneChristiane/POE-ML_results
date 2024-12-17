@@ -1,0 +1,95 @@
+
+tetouan_city_zone1:
+  - name: univariate_temporal
+    dataset_type: univariate
+    prediction_type: one_step
+    components:
+      - one_step_target
+      - temporal_features
+
+  - name: univariate_lagged
+    dataset_type: univariate
+    prediction_type: one_step
+    components:
+      - one_step_target
+      - lagged_target
+
+  - name: univariate_temporal_and_lagged
+    dataset_type: univariate
+    prediction_type: one_step
+    components:
+      - one_step_target
+      - temporal_features
+      - lagged_target
+
+  - name: univariate_multistep_temporal
+    dataset_type: univariate
+    prediction_type: multistep
+    components:
+      - multistep_target
+      - temporal_features
+
+  - name: univariate_multistep_lagged
+    dataset_type: univariate
+    prediction_type: multistep
+    components:
+      - multistep_target
+      - lagged_target
+
+  - name: univariate_multistep_temporal_and_lagged
+    dataset_type: univariate
+    prediction_type: multistep
+    components:
+      - multistep_target
+      - temporal_features
+      - lagged_target
+
+  - name: multivariate_temporal
+    dataset_type: multivariate
+    prediction_type: one_step
+    components:
+      - one_step_target
+      - feature_columns
+      - temporal_features
+
+  - name: multivariate_lagged
+    dataset_type: multivariate
+    prediction_type: one_step
+    components:
+      - one_step_target
+      - feature_columns
+      - lagged_target
+
+  - name: multivariate_temporal_and_lagged
+    dataset_type: multivariate
+    prediction_type: one_step
+    components:
+      - one_step_target
+      - feature_columns
+      - temporal_features
+      - lagged_target
+
+  - name: multivariate_multistep_temporal
+    dataset_type: multivariate
+    prediction_type: multistep
+    components:
+      - multistep_target
+      - feature_columns
+      - temporal_features
+
+  - name: multivariate_multistep_lagged
+    dataset_type: multivariate
+    prediction_type: multistep
+    components:
+      - multistep_target
+      - feature_columns
+      - lagged_target
+
+  - name: multivariate_multistep_temporal_and_lagged
+    dataset_type: multivariate
+    prediction_type: multistep
+    components:
+      - multistep_target
+      - feature_columns
+      - temporal_features
+      - lagged_target

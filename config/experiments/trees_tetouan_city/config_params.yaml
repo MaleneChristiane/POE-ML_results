@@ -1,0 +1,25 @@
+trees:
+  name: Test on Tetouan City consumption data
+  description: First experiment on the dataset with Tetouan City dataset.
+  lags: 24
+  steps: 24
+  params:
+    max_depth: [2, 4, 6, 8, 10, 15, 20]
+    criterion: [squared_error]
+    random_state: [42]
+    min_samples_split: [5, 10, 50, 150, 200, 250]
+    min_samples_leaf: [5, 10, 25, 50, 100]
+    scaler: [None, StandardScaler, MinMaxScaler, RobustScaler, PowerTransformer]
+  models:
+    - DecisionTree
+    - RandomForest
+    - GradientBoosting
+  custom_models: False
+  search_methods: [grid, random]
+  search_scoring: r2
+  cv_setting: 
+    kind: TimeSeriesSplit
+    splits: 5
+  test_size: 0.2
+  shuffle: false
+  prediction_types: [one_step, multistep, recursive]

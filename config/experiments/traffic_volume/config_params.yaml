@@ -1,0 +1,49 @@
+trees:
+  name: Experiment with tree models on traffic volume dataset
+  description: Experiment with tree models on traffic volume dataset
+  lags: 24
+  steps: 24
+  params:
+    max_depth: [2, 4, 6, 8, 10, 15, 20]
+    criterion: [squared_error]
+    random_state: [42]
+    min_samples_split: [5, 10, 50, 150, 200, 250]
+    min_samples_leaf: [5, 10, 25, 50, 100]
+    scaler: [None, StandardScaler, MinMaxScaler, RobustScaler, PowerTransformer]
+  models:
+    - DecisionTree
+    - RandomForest
+    - GradientBoosting
+  custom_models: False
+  search_methods: [grid, random]
+  search_scoring: r2
+  cv_setting: 
+    kind: TimeSeriesSplit
+    splits: 5
+  test_size: 0.2
+  shuffle: false
+  prediction_types: [one_step, multistep, recursive]
+
+
+NN:
+  name: Experiment with neural networks on traffic volume dataset
+  description: Experiment with neural networks on traffic volume dataset
+  lags: 10
+  steps: 10
+  params:
+    optimizer: ['adam', 'sgd']
+    epochs: [100, 200]
+    batch_size: [32, 64]
+    scaler: [None, StandardScaler, MinMaxScaler, RobustScaler, PowerTransformer]
+  models:
+    - SimpleNN
+    - DeepNN
+  custom_models: True
+  search_methods: [grid, random]
+  search_scoring: neg_mean_absolute_error  
+  cv_setting: 
+    kind: TimeSeriesSplit
+    splits: 5
+  test_size: 0.2
+  shuffle: false
+  prediction_types: [one_step, multistep, recursive]
