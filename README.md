@@ -21,7 +21,7 @@ The repository is structured as follows:
 │   │
 │   └── experiments                 <- For configuring experiments
 │       │
-│       ├── wine_quality        <- Experiments on Wine Quality data (D4)
+│       ├── classification_wine_quality        <- Experiments on Wine Quality data (D4)
 │       │   ├── config_datasets.yaml    <- Configuring training datasets
 │       │   └── config_params.yaml      <- Configuring experiments (E4)
 │       │
@@ -33,7 +33,7 @@ The repository is structured as follows:
 │       │   ├── config_datasets.yaml    <- Configuring training datasets
 │       │   └── config_params.yaml      <- Configuring experiments (E1, E2a)
 │       │
-│       └── tetouan_city        <- Experiments on Power Consumption data (D1)
+│       └── trees_tetouan_city        <- Experiments on Power Consumption data (D1)
 │           ├── config_datasets.yaml    <- Configuring training datasets
 │           └── config_params.yaml      <- Configuring experiments (E1)
 │
@@ -42,7 +42,7 @@ The repository is structured as follows:
 │   │
 │   ├── experiments   <- For each experiment
 │   │   │
-│   │   ├── wine_quality        <- Results from Wine Quality experiments (D4)
+│   │   ├── classification_wine_quality        <- Results from Wine Quality experiments (D4)
 │   │   │   └── classification  <- Classification experiment (E4)
 │   │   │
 │   │   ├── real_estate         <- Results from Real Estate experiments (D3)
@@ -53,7 +53,7 @@ The repository is structured as follows:
 │   │   │   ├── NN              <- The NN experiment (E21)
 │   │   │   └── trees           <- The trees experiment (E1)
 │   │   │
-│   │   └── tetouan_city        <- Results from Power Consumption experiments (D1)
+│   │   └── trees_tetouan_city        <- Results from Power Consumption experiments (D1)
 │   │       └── trees           <- The trees experiment (E1)
 │   │
 │   └── figures       <- Common for all experiments
