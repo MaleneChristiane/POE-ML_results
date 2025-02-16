@@ -8,9 +8,12 @@ POE-ML is a Pipeline for Optimizing and Evaluation Machine Learing, and to demon
 
 Each experiment has been run through POE-ML, and the performance results are automatically collected within the code-generated PDF files, which can be found the the report folder. 
 
-### Paper abstract (will be added here)
+### Paper abstract
+
+The growing adoption of machine learning has increased the need for automatic, scalable, and flexible pipeline development. However, existing automated machine learning solutions often limit customization and optimization options by hiding pipeline details in experiments. This work presents POE-ML, a Pipeline for Optimization and Evaluation of Machine Learning models that enables dynamic creation and testing of pipelines through experimental configurations. It allows exploring a wide range of models with different hyperparameters for model optimization and producing easily comparable results. To validate its effectiveness, the framework was evaluated using multiple datasets in regression and classification tasks. The results indicated that the proposed framework is both robust and adaptable, and offers a practical solution for optimizing machine learning workflows in various applications.
 
 ### Repo structure
+
 The repository is structured as follows: 
 
 ```
@@ -60,4 +63,3 @@ The repository is structured as follows:
 │
 └── README.md         <- This read-me file
 ```
-
