@@ -1,6 +1,6 @@
 # POE-ML: An automated Pipeline for Optimization and Evaluation of Machine Learning
 
-*Welcome to the repository associated with the paper of same name: "[POE-ML: An automated Pipeline for Optimization and Evaluation of Machine Learning](link_to_come) (not published yet)". Here experiment settings defined for POE-ML and resulting reports are displayed for the interested reader.*
+*Welcome to the repository associated with the paper of same name: "[POE-ML: An automated Pipeline for Optimization and Evaluation of Machine Learning](https://ieeexplore.ieee.org/document/11015031)". Here experiment settings defined for POE-ML and resulting reports are displayed for the interested reader.*
 
 ## Introduction
 
